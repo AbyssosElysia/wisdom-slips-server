@@ -45,6 +45,7 @@ public class WebSecurityConfig {
      */
     @Bean
     public PasswordEncoder passwordEncoder() {
+        log.debug("Creating password encoder");
         return new BCryptPasswordEncoder();
     }
 
@@ -53,15 +54,12 @@ public class WebSecurityConfig {
      *
      * @param configuration 鉴权配置
      * @return 鉴权处理器
+     * @throws Exception 异常
      */
     @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) {
-        try {
-            return configuration.getAuthenticationManager();
-        } catch (Exception e) {
-            log.error("Failed to configure authenticationManager", e);
-            throw new RuntimeException(e);
-        }
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
+        log.debug("Creating authentication manager");
+        return configuration.getAuthenticationManager();
     }
 
     /**
@@ -71,6 +69,7 @@ public class WebSecurityConfig {
      */
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
+        log.debug("Creating CorsConfigurationSource");
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.setAllowedOrigins(allowedCorsConfig.getAllowedUrls()); // 允许的域
         configuration.setAllowedMethods(allowedCorsConfig.getAllowedMethods());  // 允许的方法
@@ -88,26 +87,24 @@ public class WebSecurityConfig {
      *
      * @param http http请求
      * @return 需鉴权api拦截器
+     * @throws Exception 异常
      */
     @Bean
-    public SecurityFilterChain apiFilterChain(HttpSecurity http) {
-        try {
-            commonHttpSetting(http);
-            http.cors(cors -> cors.configurationSource(corsConfigurationSource()))
-                    // 匹配相应则的请求
-                    .securityMatcher(requestConfig.getAuthenticationApi())
-                    .authorizeHttpRequests(auth -> auth
-                            // 除了登陆不拦截，其他均拦截
-                            .requestMatchers(requestConfig.getLoginApi()).permitAll()
-                            .anyRequest().authenticated());
+    public SecurityFilterChain apiFilterChain(HttpSecurity http) throws Exception {
+        log.debug("Creating ApiSecurityFilterChain");
+        commonHttpSetting(http);
+        http.cors(cors -> cors.configurationSource(corsConfigurationSource()))
+                // 匹配相应则的请求
+                .securityMatcher(requestConfig.getAuthenticationApi())
+                .authorizeHttpRequests(auth -> auth
+                        // 除了登陆不拦截，其他均拦截
+                        // TODO 改为全部不拦截，方便swagger调试
+                        .requestMatchers(requestConfig.getLoginApi()).permitAll()
+                        .anyRequest().authenticated());
 
-            // 定义拦截器添加位置
-            http.addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
-            return http.build();
-        } catch (Exception e) {
-            log.error("Failed to init ApiFilterChain", e);
-            throw new RuntimeException(e);
-        }
+        // 定义拦截器添加位置
+        http.addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
+        return http.build();
     }
 
     /**
@@ -115,23 +112,26 @@ public class WebSecurityConfig {
      *
      * @param http http请求
      * @return 开放api拦截器
+     * @throws Exception 异常
      */
     @Bean
     public SecurityFilterChain openApiFilterChain(HttpSecurity http) throws Exception {
+        log.debug("Creating OpenApiSecurityFilterChain");
         commonHttpSetting(http);
         http.cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .securityMatcher("/open_api/**")
                 .authorizeHttpRequests(auth -> auth
                         .anyRequest().permitAll());
-
         return http.build();
     }
 
-
     /**
      * 禁用不必要的默认filter，处理异常响应内容
+     * @param http http请求
+     * @throws Exception 异常
      */
     private void commonHttpSetting(HttpSecurity http) throws Exception {
+        log.debug("Creating CommonHttpSetting");
         // 禁用SpringSecurity默认filter。这些filter都是非前后端分离项目的产物，用不上.
         // yml配置文件将日志设置DEBUG模式，就能看到加载了哪些filter
         // logging:

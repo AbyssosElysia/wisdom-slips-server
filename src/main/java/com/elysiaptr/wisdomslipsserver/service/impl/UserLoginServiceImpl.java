@@ -33,6 +33,13 @@ public class UserLoginServiceImpl implements UserLoginService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    /**
+     * 使用密码登录
+     *
+     * @param username 姓名
+     * @param password 密码
+     * @return jwt令牌
+     */
     public String loginByPassword(String username, String password) {
         log.debug("loginByPassword: username={}, password={}", username, passwordEncoder.encode(password));
 

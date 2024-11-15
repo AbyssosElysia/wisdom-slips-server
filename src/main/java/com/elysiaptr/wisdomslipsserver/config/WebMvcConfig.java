@@ -11,10 +11,19 @@ import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 
-@Configuration
+/**
+ * swagger文档配置信息
+ *
+ * @author ElysiaPtr
+ */
 @Slf4j
+@Configuration
 public class WebMvcConfig {
 
+    /**
+     * 配置文档基本信息
+     * @return 新建文档类实例
+     */
     @Bean
     public Docket docket() {
         log.info("begin to build docket");
@@ -27,7 +36,7 @@ public class WebMvcConfig {
         Docket docket = new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.elysiaptr.wisdom_slips_server.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.elysiaptr.wisdomslipsserver.controller"))
                 .paths(PathSelectors.any())
                 .build();
         return docket;
