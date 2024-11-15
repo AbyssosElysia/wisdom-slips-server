@@ -1,0 +1,57 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: wisdom-slips-server
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/wisdom_slips_db
+    username: root
+    password: 15327938768Lzy+
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 20
+      idle-timeout: 30000
+      max-lifetime: 1800000
+      connection-timeout: 30000
+
+logging:
+  level:
+    root: INFO
+    com.elysiaptr: DEBUG
+    org.springframework.security: DEBUG
+  charset:
+    console: utf-8
+
+config:
+  jwt:
+    ttl: 86400000
+    secret-key: "ElysiaPtr"
+    issuer: "ElysiaPtr"
+  cors:
+    allowed-urls:
+      - "http://localhost:5173"
+      - "http://localhost:8080"
+      - "http://localhost:10086"
+    allowed-methods:
+      - "GET"
+      - "POST"
+      - "PUT"
+      - "DELETE"
+      - "OPTIONS"
+    allowed-headers:
+      - "Authorization"
+      - "Cache-Control"
+      - "Content-Type"
+      - "Accept"
+    allowed-path: /**
+  request:
+    authentication-api: /api/**
+    open-api: /open_api/**
+    login-api: /api/login/**
+    authentication-api-header: /api/
+    open-api-header: /open_api/
+    login-api-header: /api/login/
+
