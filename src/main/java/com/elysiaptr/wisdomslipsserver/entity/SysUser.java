@@ -32,6 +32,11 @@ public class SysUser implements Serializable {
     private String password;
 
     /**
+     * 是否删除：0=未删除，1=已删除
+     */
+    private Integer ifDelete;
+
+    /**
      * 角色：0=管理员，1=用户
      */
     private Integer role;
@@ -40,11 +45,6 @@ public class SysUser implements Serializable {
      * 账号状态：0=停用，1=正常
      */
     private Integer status;
-
-    /**
-     * vip等级：0=非vip，1=vip1，2=vip2，3=vip3
-     */
-    private Integer vip;
 
     /**
      * 头像路径
@@ -87,11 +87,6 @@ public class SysUser implements Serializable {
     private Date updateTime;
 
     /**
-     * 最后一次修改人
-     */
-    private Long updateBy;
-
-    /**
      * 备注
      */
     private String remark;
@@ -114,9 +109,9 @@ public class SysUser implements Serializable {
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
             && (this.getUsername() == null ? other.getUsername() == null : this.getUsername().equals(other.getUsername()))
             && (this.getPassword() == null ? other.getPassword() == null : this.getPassword().equals(other.getPassword()))
+            && (this.getIfDelete() == null ? other.getIfDelete() == null : this.getIfDelete().equals(other.getIfDelete()))
             && (this.getRole() == null ? other.getRole() == null : this.getRole().equals(other.getRole()))
             && (this.getStatus() == null ? other.getStatus() == null : this.getStatus().equals(other.getStatus()))
-            && (this.getVip() == null ? other.getVip() == null : this.getVip().equals(other.getVip()))
             && (this.getAvatar() == null ? other.getAvatar() == null : this.getAvatar().equals(other.getAvatar()))
             && (this.getGender() == null ? other.getGender() == null : this.getGender().equals(other.getGender()))
             && (this.getAge() == null ? other.getAge() == null : this.getAge().equals(other.getAge()))
@@ -125,7 +120,6 @@ public class SysUser implements Serializable {
             && (this.getLastLoginTime() == null ? other.getLastLoginTime() == null : this.getLastLoginTime().equals(other.getLastLoginTime()))
             && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()))
             && (this.getUpdateTime() == null ? other.getUpdateTime() == null : this.getUpdateTime().equals(other.getUpdateTime()))
-            && (this.getUpdateBy() == null ? other.getUpdateBy() == null : this.getUpdateBy().equals(other.getUpdateBy()))
             && (this.getRemark() == null ? other.getRemark() == null : this.getRemark().equals(other.getRemark()));
     }
 
@@ -136,9 +130,9 @@ public class SysUser implements Serializable {
         result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
         result = prime * result + ((getUsername() == null) ? 0 : getUsername().hashCode());
         result = prime * result + ((getPassword() == null) ? 0 : getPassword().hashCode());
+        result = prime * result + ((getIfDelete() == null) ? 0 : getIfDelete().hashCode());
         result = prime * result + ((getRole() == null) ? 0 : getRole().hashCode());
         result = prime * result + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        result = prime * result + ((getVip() == null) ? 0 : getVip().hashCode());
         result = prime * result + ((getAvatar() == null) ? 0 : getAvatar().hashCode());
         result = prime * result + ((getGender() == null) ? 0 : getGender().hashCode());
         result = prime * result + ((getAge() == null) ? 0 : getAge().hashCode());
@@ -147,7 +141,6 @@ public class SysUser implements Serializable {
         result = prime * result + ((getLastLoginTime() == null) ? 0 : getLastLoginTime().hashCode());
         result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         result = prime * result + ((getUpdateTime() == null) ? 0 : getUpdateTime().hashCode());
-        result = prime * result + ((getUpdateBy() == null) ? 0 : getUpdateBy().hashCode());
         result = prime * result + ((getRemark() == null) ? 0 : getRemark().hashCode());
         return result;
     }
@@ -161,9 +154,9 @@ public class SysUser implements Serializable {
         sb.append(", id=").append(id);
         sb.append(", username=").append(username);
         sb.append(", password=").append(password);
+        sb.append(", ifDelete=").append(ifDelete);
         sb.append(", role=").append(role);
         sb.append(", status=").append(status);
-        sb.append(", vip=").append(vip);
         sb.append(", avatar=").append(avatar);
         sb.append(", gender=").append(gender);
         sb.append(", age=").append(age);
@@ -172,7 +165,6 @@ public class SysUser implements Serializable {
         sb.append(", lastLoginTime=").append(lastLoginTime);
         sb.append(", createTime=").append(createTime);
         sb.append(", updateTime=").append(updateTime);
-        sb.append(", updateBy=").append(updateBy);
         sb.append(", remark=").append(remark);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");

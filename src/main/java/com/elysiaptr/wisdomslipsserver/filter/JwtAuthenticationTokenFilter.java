@@ -4,6 +4,8 @@ import com.alibaba.fastjson2.JSON;
 import com.elysiaptr.wisdomslipsserver.config.RequestConfig;
 import com.elysiaptr.wisdomslipsserver.constant.ErrorConstant;
 import com.elysiaptr.wisdomslipsserver.dto.LoginUser;
+import com.elysiaptr.wisdomslipsserver.exception.NoAuthorizationException;
+import com.elysiaptr.wisdomslipsserver.exception.WrongTokenException;
 import com.elysiaptr.wisdomslipsserver.util.JwtUtil;
 import io.jsonwebtoken.Claims;
 import jakarta.servlet.FilterChain;
@@ -51,7 +53,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
         String token = request.getHeader("Authorization");
         if (!StringUtils.hasText(token)) {
             log.warn("the request for {}, token is empty", url);
-            throw new RuntimeException(ErrorConstant.TOKEN_IS_EMPTY);
+            throw new NoAuthorizationException(ErrorConstant.TOKEN_IS_EMPTY);
         }
 
         String loginUserStr = null;
@@ -64,7 +66,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
             loginUser = JSON.parseObject(loginUserStr, LoginUser.class);
         } catch (Exception e) {
             log.warn("the request for {}, token is wrong", url);
-            throw new RuntimeException(ErrorConstant.TOKEN_IS_WRONG);
+            throw new WrongTokenException(ErrorConstant.TOKEN_IS_WRONG);
         }
 
         // 将当前token信息保存到Security上下文中

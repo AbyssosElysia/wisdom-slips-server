@@ -2,31 +2,30 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.elysiaptr.wisdomslipsserver.mapper.HistoryDataTermMapper">
+<mapper namespace="com.elysiaptr.wisdomslipsserver.mapper.FunctionPointMapper">
 
-    <resultMap id="BaseResultMap" type="com.elysiaptr.wisdomslipsserver.entity.HistoryDataTerm">
+    <resultMap id="BaseResultMap" type="com.elysiaptr.wisdomslipsserver.entity.FunctionPoint">
             <id property="id" column="id" jdbcType="BIGINT"/>
-            <result property="historyId" column="history_id" jdbcType="BIGINT"/>
+            <result property="projectId" column="project_id" jdbcType="BIGINT"/>
+            <result property="subsystemId" column="subsystem_id" jdbcType="BIGINT"/>
             <result property="ifDelete" column="if_delete" jdbcType="INTEGER"/>
             <result property="deleteTime" column="delete_time" jdbcType="TIMESTAMP"/>
-            <result property="deleteBy" column="delete_by" jdbcType="BIGINT"/>
-            <result property="subsystem" column="subsystem" jdbcType="VARCHAR"/>
             <result property="module" column="module" jdbcType="VARCHAR"/>
-            <result property="pointTerm" column="point_term" jdbcType="VARCHAR"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
             <result property="description" column="description" jdbcType="VARCHAR"/>
             <result property="category" column="category" jdbcType="VARCHAR"/>
             <result property="ufp" column="ufp" jdbcType="INTEGER"/>
+            <result property="complexity" column="complexity" jdbcType="INTEGER"/>
             <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
             <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
-            <result property="updateBy" column="update_by" jdbcType="BIGINT"/>
             <result property="remark" column="remark" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,history_id,if_delete,
-        delete_time,delete_by,subsystem,
-        module,point_term,description,
-        category,ufp,create_time,
-        update_time,update_by,remark
+        id,project_id,subsystem_id,
+        if_delete,delete_time,module,
+        name,description,category,
+        ufp,complexity,create_time,
+        update_time,remark
     </sql>
 </mapper>
