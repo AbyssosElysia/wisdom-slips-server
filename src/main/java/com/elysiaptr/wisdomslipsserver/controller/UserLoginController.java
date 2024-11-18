@@ -1,7 +1,7 @@
 package com.elysiaptr.wisdomslipsserver.controller;
 
 import com.elysiaptr.wisdomslipsserver.constant.ErrorConstant;
-import com.elysiaptr.wisdomslipsserver.dto.UsernamePasswordLogin;
+import com.elysiaptr.wisdomslipsserver.dto.requestbody.UsernamePasswordLogin;
 import com.elysiaptr.wisdomslipsserver.entity.ApiResponse;
 import com.elysiaptr.wisdomslipsserver.service.UserLoginService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.elysiaptr.wisdomslipsserver.dto;
+package com.elysiaptr.wisdomslipsserver.dto.requestbody;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
