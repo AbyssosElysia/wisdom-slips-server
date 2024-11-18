@@ -1,7 +1,7 @@
 package com.elysiaptr.wisdomslipsserver.mapper;
 
-import com.elysiaptr.wisdomslipsserver.entity.Project;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.elysiaptr.wisdomslipsserver.entity.Project;
 
 /**
 * @author elysiaptr

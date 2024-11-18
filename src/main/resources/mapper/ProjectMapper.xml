@@ -31,6 +31,8 @@
             <result property="diSum" column="di_sum" jdbcType="INTEGER"/>
             <result property="vaf" column="vaf" jdbcType="FLOAT"/>
             <result property="cf" column="cf" jdbcType="FLOAT"/>
+            <result property="stage" column="stage" jdbcType="INTEGER"/>
+            <result property="method" column="method" jdbcType="INTEGER"/>
             <result property="ufp" column="ufp" jdbcType="FLOAT"/>
             <result property="dfp" column="dfp" jdbcType="FLOAT"/>
             <result property="s" column="s" jdbcType="FLOAT"/>
@@ -48,8 +50,9 @@
         gsc_eue,gsc_ou,gsc_cp,
         gsc_r,gsc_ie,gsc_oe,
         gsc_ms,gsc_fc,di_sum,
-        vaf,cf,ufp,
-        dfp,s,create_time,
-        update_time,remark
+        vaf,cf,stage,
+        method,ufp,dfp,
+        s,create_time,update_time,
+        remark
     </sql>
 </mapper>

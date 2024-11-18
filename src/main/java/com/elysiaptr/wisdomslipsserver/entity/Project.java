@@ -147,6 +147,16 @@ public class Project implements Serializable {
     private Double cf;
 
     /**
+     * 状态：1=项目立项，2=项目招标，3=项目早期，4=项目中期，5=项目完成
+     */
+    private Integer stage;
+
+    /**
+     * 方法：1=dfp，2=s
+     */
+    private Integer method;
+
+    /**
      * 未调整功能点数
      */
     private Double ufp;
@@ -217,6 +227,8 @@ public class Project implements Serializable {
             && (this.getDiSum() == null ? other.getDiSum() == null : this.getDiSum().equals(other.getDiSum()))
             && (this.getVaf() == null ? other.getVaf() == null : this.getVaf().equals(other.getVaf()))
             && (this.getCf() == null ? other.getCf() == null : this.getCf().equals(other.getCf()))
+            && (this.getStage() == null ? other.getStage() == null : this.getStage().equals(other.getStage()))
+            && (this.getMethod() == null ? other.getMethod() == null : this.getMethod().equals(other.getMethod()))
             && (this.getUfp() == null ? other.getUfp() == null : this.getUfp().equals(other.getUfp()))
             && (this.getDfp() == null ? other.getDfp() == null : this.getDfp().equals(other.getDfp()))
             && (this.getS() == null ? other.getS() == null : this.getS().equals(other.getS()))
@@ -255,6 +267,8 @@ public class Project implements Serializable {
         result = prime * result + ((getDiSum() == null) ? 0 : getDiSum().hashCode());
         result = prime * result + ((getVaf() == null) ? 0 : getVaf().hashCode());
         result = prime * result + ((getCf() == null) ? 0 : getCf().hashCode());
+        result = prime * result + ((getStage() == null) ? 0 : getStage().hashCode());
+        result = prime * result + ((getMethod() == null) ? 0 : getMethod().hashCode());
         result = prime * result + ((getUfp() == null) ? 0 : getUfp().hashCode());
         result = prime * result + ((getDfp() == null) ? 0 : getDfp().hashCode());
         result = prime * result + ((getS() == null) ? 0 : getS().hashCode());
@@ -296,6 +310,8 @@ public class Project implements Serializable {
         sb.append(", diSum=").append(diSum);
         sb.append(", vaf=").append(vaf);
         sb.append(", cf=").append(cf);
+        sb.append(", stage=").append(stage);
+        sb.append(", method=").append(method);
         sb.append(", ufp=").append(ufp);
         sb.append(", dfp=").append(dfp);
         sb.append(", s=").append(s);
