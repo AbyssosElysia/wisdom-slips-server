@@ -1,6 +1,11 @@
 package com.elysiaptr.wisdomslipsserver.exception;
 
-public class WrongTokenException extends RuntimeException{
+/**
+ * 异常类，表示Authorization请求头token错误
+ *
+ * @author ElysiaPtr
+ */
+public class WrongTokenException extends RuntimeException {
     public WrongTokenException(String message) {
         super(message);
     }

@@ -30,7 +30,7 @@ public class JwtUtil {
     /**
      * 生成JWT密钥
      *
-     * @param subject 主题
+     * @param subject   主题
      * @param ttlMillis 生命周期
      * @return 生成的JWT密钥
      */
@@ -84,9 +84,9 @@ public class JwtUtil {
     /**
      * 生成JWT的逻辑
      *
-     * @param subject 主题
+     * @param subject   主题
      * @param ttlMillis 生命周期
-     * @param uuid uuid
+     * @param uuid      uuid
      * @return 已经设置好参数的JwtBuilder
      */
     private JwtBuilder getJwtBuilder(String subject, Long ttlMillis, String uuid) {

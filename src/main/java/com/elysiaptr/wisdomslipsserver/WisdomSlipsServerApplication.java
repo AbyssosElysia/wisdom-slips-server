@@ -10,8 +10,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @MapperScan("com.elysiaptr.wisdomslipsserver.mapper")
 public class WisdomSlipsServerApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(WisdomSlipsServerApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(WisdomSlipsServerApplication.class, args);
+    }
 
 }

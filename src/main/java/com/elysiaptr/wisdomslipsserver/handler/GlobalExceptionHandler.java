@@ -2,8 +2,8 @@ package com.elysiaptr.wisdomslipsserver.handler;
 
 import com.elysiaptr.wisdomslipsserver.constant.ErrorConstant;
 import com.elysiaptr.wisdomslipsserver.entity.ApiResponse;
-import com.elysiaptr.wisdomslipsserver.exception.NoAuthorizationException;
-import com.elysiaptr.wisdomslipsserver.exception.WrongPasswordException;
+import com.elysiaptr.wisdomslipsserver.exception.NoTokenException;
+import com.elysiaptr.wisdomslipsserver.exception.WrongArgsException;
 import com.elysiaptr.wisdomslipsserver.exception.WrongTokenException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.AuthenticationException;
@@ -21,39 +21,31 @@ public class GlobalExceptionHandler {
 
     /**
      * 捕获身份验证异常
+     *
      * @param e 异常
      * @return 响应体
      */
     @ExceptionHandler(AuthenticationException.class)
     public ApiResponse<String> handleAuthenticationException(AuthenticationException e) {
-        log.error("身份验证失败: {}", e.getMessage(), e);
+        log.error(e.getMessage(), e);
         return ApiResponse.error(ErrorConstant.AUTHENTICATION_EXCEPTION);
     }
 
     /**
-     * 捕获密码错误异常
-     * @param e 异常
-     * @return 响应体
-     */
-    @ExceptionHandler(WrongPasswordException.class)
-    public ApiResponse<String> WrongPasswordException(WrongPasswordException e) {
-        log.error(e.getMessage(), e);
-        return ApiResponse.error(ErrorConstant.WRONG_PASSWORD_EXCEPTION);
-    }
-
-    /**
      * 捕获密钥为空异常
+     *
      * @param e 异常
      * @return 响应体
      */
-    @ExceptionHandler(NoAuthorizationException.class)
-    public ApiResponse<String> NoAuthorizationException(NoAuthorizationException e) {
+    @ExceptionHandler(NoTokenException.class)
+    public ApiResponse<String> NoAuthorizationException(NoTokenException e) {
         log.error(e.getMessage(), e);
         return ApiResponse.error(ErrorConstant.TOKEN_IS_EMPTY);
     }
 
     /**
      * 捕获密钥错误异常
+     *
      * @param e 异常
      * @return 响应体
      */
@@ -64,7 +56,20 @@ public class GlobalExceptionHandler {
     }
 
     /**
+     * 变量错误异常
+     *
+     * @param e 异常
+     * @return 响应体
+     */
+    @ExceptionHandler(WrongArgsException.class)
+    public ApiResponse<String> WrongArgsException(WrongArgsException e) {
+        log.error(e.getMessage(), e);
+        return ApiResponse.error(ErrorConstant.RUNTIME_EXCEPTION);
+    }
+
+    /**
      * 捕获运行时异常
+     *
      * @param e 异常
      * @return 响应体
      */
@@ -76,6 +81,7 @@ public class GlobalExceptionHandler {
 
     /**
      * 捕获全局异常
+     *
      * @param e 异常
      * @return 响应体
      */

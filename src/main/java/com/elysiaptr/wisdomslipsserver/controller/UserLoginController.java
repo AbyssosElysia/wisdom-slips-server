@@ -11,6 +11,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * 用户登录控制器
+ *
+ * @author ElysiaPtr
+ */
 @RestController
 @RequestMapping("/api/login")
 public class UserLoginController {
@@ -20,6 +25,7 @@ public class UserLoginController {
 
     /**
      * 用户名密码登录
+     *
      * @param usernamePasswordLogin 密码登录请求体
      * @return jwt
      */

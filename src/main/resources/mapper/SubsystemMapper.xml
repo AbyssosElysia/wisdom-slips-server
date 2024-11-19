@@ -5,15 +5,15 @@
 <mapper namespace="com.elysiaptr.wisdomslipsserver.mapper.SubsystemMapper">
 
     <resultMap id="BaseResultMap" type="com.elysiaptr.wisdomslipsserver.entity.Subsystem">
-            <id property="id" column="id" jdbcType="BIGINT"/>
-            <result property="projectId" column="project_id" jdbcType="BIGINT"/>
-            <result property="name" column="name" jdbcType="VARCHAR"/>
-            <result property="ifDelete" column="if_delete" jdbcType="INTEGER"/>
-            <result property="deleteTime" column="delete_time" jdbcType="TIMESTAMP"/>
-            <result property="ufp" column="ufp" jdbcType="INTEGER"/>
-            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
-            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
-            <result property="remark" column="remark" jdbcType="VARCHAR"/>
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="projectId" column="project_id" jdbcType="BIGINT"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="ifDelete" column="if_delete" jdbcType="INTEGER"/>
+        <result property="deleteTime" column="delete_time" jdbcType="TIMESTAMP"/>
+        <result property="ufp" column="ufp" jdbcType="INTEGER"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <result property="remark" column="remark" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">

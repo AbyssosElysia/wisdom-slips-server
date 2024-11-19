@@ -127,6 +127,7 @@ public class WebSecurityConfig {
 
     /**
      * 禁用不必要的默认filter，处理异常响应内容
+     *
      * @param http http请求
      * @throws Exception 异常
      */

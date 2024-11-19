@@ -4,16 +4,20 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.elysiaptr.wisdomslipsserver.annotation.AutoTimestamp;
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.Date;
-import lombok.Data;
 
 /**
  * 功能点
+ *
  * @TableName function_point
  */
-@TableName(value ="function_point")
+@TableName(value = "function_point")
 @Data
+@AutoTimestamp
 public class FunctionPoint implements Serializable {
     /**
      * 历史数据id
@@ -67,11 +71,6 @@ public class FunctionPoint implements Serializable {
     private Integer ufp;
 
     /**
-     * 复杂度：1=低，2=中，3=高
-     */
-    private Integer complexity;
-
-    /**
      * 创建时间
      */
     private Date createTime;
@@ -102,19 +101,18 @@ public class FunctionPoint implements Serializable {
         }
         FunctionPoint other = (FunctionPoint) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
-            && (this.getProjectId() == null ? other.getProjectId() == null : this.getProjectId().equals(other.getProjectId()))
-            && (this.getSubsystemId() == null ? other.getSubsystemId() == null : this.getSubsystemId().equals(other.getSubsystemId()))
-            && (this.getIfDelete() == null ? other.getIfDelete() == null : this.getIfDelete().equals(other.getIfDelete()))
-            && (this.getDeleteTime() == null ? other.getDeleteTime() == null : this.getDeleteTime().equals(other.getDeleteTime()))
-            && (this.getModule() == null ? other.getModule() == null : this.getModule().equals(other.getModule()))
-            && (this.getName() == null ? other.getName() == null : this.getName().equals(other.getName()))
-            && (this.getDescription() == null ? other.getDescription() == null : this.getDescription().equals(other.getDescription()))
-            && (this.getCategory() == null ? other.getCategory() == null : this.getCategory().equals(other.getCategory()))
-            && (this.getUfp() == null ? other.getUfp() == null : this.getUfp().equals(other.getUfp()))
-            && (this.getComplexity() == null ? other.getComplexity() == null : this.getComplexity().equals(other.getComplexity()))
-            && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()))
-            && (this.getUpdateTime() == null ? other.getUpdateTime() == null : this.getUpdateTime().equals(other.getUpdateTime()))
-            && (this.getRemark() == null ? other.getRemark() == null : this.getRemark().equals(other.getRemark()));
+                && (this.getProjectId() == null ? other.getProjectId() == null : this.getProjectId().equals(other.getProjectId()))
+                && (this.getSubsystemId() == null ? other.getSubsystemId() == null : this.getSubsystemId().equals(other.getSubsystemId()))
+                && (this.getIfDelete() == null ? other.getIfDelete() == null : this.getIfDelete().equals(other.getIfDelete()))
+                && (this.getDeleteTime() == null ? other.getDeleteTime() == null : this.getDeleteTime().equals(other.getDeleteTime()))
+                && (this.getModule() == null ? other.getModule() == null : this.getModule().equals(other.getModule()))
+                && (this.getName() == null ? other.getName() == null : this.getName().equals(other.getName()))
+                && (this.getDescription() == null ? other.getDescription() == null : this.getDescription().equals(other.getDescription()))
+                && (this.getCategory() == null ? other.getCategory() == null : this.getCategory().equals(other.getCategory()))
+                && (this.getUfp() == null ? other.getUfp() == null : this.getUfp().equals(other.getUfp()))
+                && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()))
+                && (this.getUpdateTime() == null ? other.getUpdateTime() == null : this.getUpdateTime().equals(other.getUpdateTime()))
+                && (this.getRemark() == null ? other.getRemark() == null : this.getRemark().equals(other.getRemark()));
     }
 
     @Override
@@ -131,7 +129,6 @@ public class FunctionPoint implements Serializable {
         result = prime * result + ((getDescription() == null) ? 0 : getDescription().hashCode());
         result = prime * result + ((getCategory() == null) ? 0 : getCategory().hashCode());
         result = prime * result + ((getUfp() == null) ? 0 : getUfp().hashCode());
-        result = prime * result + ((getComplexity() == null) ? 0 : getComplexity().hashCode());
         result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         result = prime * result + ((getUpdateTime() == null) ? 0 : getUpdateTime().hashCode());
         result = prime * result + ((getRemark() == null) ? 0 : getRemark().hashCode());
@@ -154,7 +151,6 @@ public class FunctionPoint implements Serializable {
         sb.append(", description=").append(description);
         sb.append(", category=").append(category);
         sb.append(", ufp=").append(ufp);
-        sb.append(", complexity=").append(complexity);
         sb.append(", createTime=").append(createTime);
         sb.append(", updateTime=").append(updateTime);
         sb.append(", remark=").append(remark);

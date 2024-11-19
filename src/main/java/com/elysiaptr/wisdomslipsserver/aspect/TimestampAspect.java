@@ -23,7 +23,7 @@ public class TimestampAspect {
      * 在insert方法的时候插入
      *
      * @param joinPoint 切点
-     * @param entity 实例
+     * @param entity    实例
      * @throws IllegalAccessException 非法输入错误
      */
     @Before("execution(* com.elysiaptr.wisdomslipsserver.mapper.*.insert(..)) && args(entity)")
@@ -38,7 +38,7 @@ public class TimestampAspect {
      * 在update方法的时候插入
      *
      * @param joinPoint 切点
-     * @param entity 实例
+     * @param entity    实例
      * @throws IllegalAccessException 非法输入错误
      */
     @Before("execution(* com.elysiaptr.wisdomslipsserver.mapper.*.updateById(..)) && args(entity)")
@@ -52,7 +52,7 @@ public class TimestampAspect {
      * 在delete方法的时候插入
      *
      * @param joinPoint 切点
-     * @param entity 实例
+     * @param entity    实例
      * @throws IllegalAccessException 非法输入错误
      */
     @Before("execution(* com.elysiaptr.wisdomslipsserver.mapper.*.deleteById(..)) && args(entity)")
@@ -66,7 +66,7 @@ public class TimestampAspect {
      * 在批量insert方法的时候插入
      *
      * @param joinPoint 切点
-     * @param entities 实例
+     * @param entities  实例
      * @throws IllegalAccessException 非法输入错误
      */
     @Before("execution(* com.elysiaptr.wisdomslipsserver.mapper.*.batchInsert(..)) && args(entities)")
@@ -83,7 +83,7 @@ public class TimestampAspect {
      * 在批量update方法的时候插入
      *
      * @param joinPoint 切点
-     * @param entities 实例
+     * @param entities  实例
      * @throws IllegalAccessException 非法输入错误
      */
     @Before("execution(* com.elysiaptr.wisdomslipsserver.mapper.*.batchUpdate(..)) && args(entities)")
@@ -99,7 +99,7 @@ public class TimestampAspect {
      * 在批量delete方法的时候插入
      *
      * @param joinPoint 切点
-     * @param entities 实例
+     * @param entities  实例
      * @throws IllegalAccessException 非法输入错误
      */
     @Before("execution(* com.elysiaptr.wisdomslipsserver.mapper.*.batchDelete(..)) && args(entities)")
@@ -113,9 +113,10 @@ public class TimestampAspect {
 
     /**
      * 设置域名
-     * @param entity 实体
+     *
+     * @param entity    实体
      * @param fieldName 域名
-     * @param value 值
+     * @param value     值
      * @throws IllegalAccessException 非法输入错误
      */
     private void setField(Object entity, String fieldName, LocalDateTime value) throws IllegalAccessException {

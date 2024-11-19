@@ -22,6 +22,7 @@ public class WebMvcConfig {
 
     /**
      * 配置文档基本信息
+     *
      * @return 新建文档类实例
      */
     @Bean

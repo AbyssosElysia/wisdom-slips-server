@@ -4,7 +4,7 @@ import com.alibaba.fastjson2.JSON;
 import com.elysiaptr.wisdomslipsserver.config.RequestConfig;
 import com.elysiaptr.wisdomslipsserver.constant.ErrorConstant;
 import com.elysiaptr.wisdomslipsserver.dto.LoginUser;
-import com.elysiaptr.wisdomslipsserver.exception.NoAuthorizationException;
+import com.elysiaptr.wisdomslipsserver.exception.NoTokenException;
 import com.elysiaptr.wisdomslipsserver.exception.WrongTokenException;
 import com.elysiaptr.wisdomslipsserver.util.JwtUtil;
 import io.jsonwebtoken.Claims;
@@ -37,6 +37,15 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
     @Autowired
     private RequestConfig requestConfig;
 
+    /**
+     * jwt过滤链
+     *
+     * @param request     请求
+     * @param response    响应
+     * @param filterChain 过滤链
+     * @throws ServletException Servlet异常
+     * @throws IOException      输入输出异常
+     */
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 
         // 拿到访问的url
@@ -53,7 +62,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
         String token = request.getHeader("Authorization");
         if (!StringUtils.hasText(token)) {
             log.warn("the request for {}, token is empty", url);
-            throw new NoAuthorizationException(ErrorConstant.TOKEN_IS_EMPTY);
+            throw new NoTokenException(ErrorConstant.TOKEN_IS_EMPTY);
         }
 
         String loginUserStr = null;

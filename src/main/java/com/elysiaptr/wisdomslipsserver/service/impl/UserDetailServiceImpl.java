@@ -27,6 +27,7 @@ public class UserDetailServiceImpl implements UserDetailsService {
 
     /**
      * 根据用户选择
+     *
      * @param username the username identifying the user whose data is required.
      * @return 用户详情
      * @throws UsernameNotFoundException 用户名未找到异常

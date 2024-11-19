@@ -14,4 +14,7 @@ public class ErrorConstant {
     public static final String TOKEN_IS_WRONG = "密钥错误";
     public static final String LOGIN_FAILED = "登陆失败";
     public static final String AUTHENTICATION_EXCEPTION = "身份验证失败";
+    public static final String WRONG_UFP_COMPLEXITY_EXCEPTION = "UFP复杂度变量异常";
+    public static final String WRONG_METHOD_EXCEPTION = "方法选择变量异常";
+    public static final String WRONG_CATEGORY_INPUT_EXCEPTION = "输入的ufp分类异常";
 }
