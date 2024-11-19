@@ -1,7 +1,6 @@
 package com.elysiaptr.wisdomslipsserver.strategy.impl.functionPointAnalyzeStrategyImpl.abstractStrategy;
 
 import com.elysiaptr.wisdomslipsserver.entity.FunctionPoint;
-import com.elysiaptr.wisdomslipsserver.entity.Project;
 import com.elysiaptr.wisdomslipsserver.factory.UfpEntityFactory;
 import com.elysiaptr.wisdomslipsserver.strategy.FunctionPointAnalyzeStrategy;
 import com.elysiaptr.wisdomslipsserver.utils.FunctionPointAnalyzeAlgorithmUtil;
