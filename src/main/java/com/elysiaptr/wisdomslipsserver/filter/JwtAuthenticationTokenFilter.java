@@ -6,7 +6,7 @@ import com.elysiaptr.wisdomslipsserver.constant.ErrorConstant;
 import com.elysiaptr.wisdomslipsserver.dto.LoginUser;
 import com.elysiaptr.wisdomslipsserver.exception.NoTokenException;
 import com.elysiaptr.wisdomslipsserver.exception.WrongTokenException;
-import com.elysiaptr.wisdomslipsserver.util.JwtUtil;
+import com.elysiaptr.wisdomslipsserver.utils.JwtUtil;
 import io.jsonwebtoken.Claims;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

@@ -1,4 +1,4 @@
-package com.elysiaptr.wisdomslipsserver.util;
+package com.elysiaptr.wisdomslipsserver.utils;
 
 import com.elysiaptr.wisdomslipsserver.config.JwtConfig;
 import io.jsonwebtoken.Claims;

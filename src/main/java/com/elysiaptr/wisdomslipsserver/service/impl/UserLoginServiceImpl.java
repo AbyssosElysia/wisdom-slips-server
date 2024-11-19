@@ -4,7 +4,7 @@ import com.alibaba.fastjson2.JSON;
 import com.elysiaptr.wisdomslipsserver.constant.ErrorConstant;
 import com.elysiaptr.wisdomslipsserver.dto.LoginUser;
 import com.elysiaptr.wisdomslipsserver.service.UserLoginService;
-import com.elysiaptr.wisdomslipsserver.util.JwtUtil;
+import com.elysiaptr.wisdomslipsserver.utils.JwtUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;

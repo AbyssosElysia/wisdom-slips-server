@@ -1,4 +1,4 @@
-package com.elysiaptr.wisdomslipsserver.util;
+package com.elysiaptr.wisdomslipsserver.utils;
 
 import com.elysiaptr.wisdomslipsserver.constant.ErrorConstant;
 import com.elysiaptr.wisdomslipsserver.entity.FunctionPoint;

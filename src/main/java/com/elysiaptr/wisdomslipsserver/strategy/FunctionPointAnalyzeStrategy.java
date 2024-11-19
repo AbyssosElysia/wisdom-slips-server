@@ -19,5 +19,5 @@ public interface FunctionPointAnalyzeStrategy {
      * @param functionPoints 功能点
      * @return 一个List，包含两项，第一项为各分子系统信息，第二项为总系统的信息
      */
-    List<Map<Long, Double>> process(Project project, List<FunctionPoint> functionPoints);
+    Map<Long, Integer> process(Project project, List<FunctionPoint> functionPoints);
 }

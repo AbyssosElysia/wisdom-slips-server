@@ -17,4 +17,5 @@ public class ErrorConstant {
     public static final String WRONG_UFP_COMPLEXITY_EXCEPTION = "UFP复杂度变量异常";
     public static final String WRONG_METHOD_EXCEPTION = "方法选择变量异常";
     public static final String WRONG_CATEGORY_INPUT_EXCEPTION = "输入的ufp分类异常";
+    public static final String WRONG_STAGE_INDEX = "输入阶段下标异常";
 }

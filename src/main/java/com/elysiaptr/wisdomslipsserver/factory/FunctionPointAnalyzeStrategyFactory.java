@@ -7,7 +7,7 @@ import com.elysiaptr.wisdomslipsserver.strategy.impl.functionPointAnalyzeStrateg
 import com.elysiaptr.wisdomslipsserver.strategy.impl.functionPointAnalyzeStrategyImpl.GeneralSystemAdjustmentFactorMethod;
 
 /**
- * 功能点分析策略
+ * 功能点分析策略工厂
  *
  * @author ElysiaPtr
  */
