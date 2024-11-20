@@ -5,42 +5,41 @@
 <mapper namespace="com.elysiaptr.wisdomslipsserver.mapper.ProjectMapper">
 
     <resultMap id="BaseResultMap" type="com.elysiaptr.wisdomslipsserver.entity.Project">
-            <id property="id" column="id" jdbcType="BIGINT"/>
-            <result property="name" column="name" jdbcType="VARCHAR"/>
-            <result property="userId" column="user_id" jdbcType="BIGINT"/>
-            <result property="ifDelete" column="if_delete" jdbcType="INTEGER"/>
-            <result property="deleteTime" column="delete_time" jdbcType="TIMESTAMP"/>
-            <result property="ilf" column="ilf" jdbcType="INTEGER"/>
-            <result property="eif" column="eif" jdbcType="INTEGER"/>
-            <result property="ei" column="ei" jdbcType="INTEGER"/>
-            <result property="eo" column="eo" jdbcType="INTEGER"/>
-            <result property="eq" column="eq" jdbcType="INTEGER"/>
-            <result property="gscDc" column="gsc_dc" jdbcType="INTEGER"/>
-            <result property="gscDdp" column="gsc_ddp" jdbcType="INTEGER"/>
-            <result property="gscP" column="gsc_p" jdbcType="INTEGER"/>
-            <result property="gscHuc" column="gsc_huc" jdbcType="INTEGER"/>
-            <result property="gscTr" column="gsc_tr" jdbcType="INTEGER"/>
-            <result property="gscOde" column="gsc_ode" jdbcType="INTEGER"/>
-            <result property="gscEue" column="gsc_eue" jdbcType="INTEGER"/>
-            <result property="gscOu" column="gsc_ou" jdbcType="INTEGER"/>
-            <result property="gscCp" column="gsc_cp" jdbcType="INTEGER"/>
-            <result property="gscR" column="gsc_r" jdbcType="INTEGER"/>
-            <result property="gscIe" column="gsc_ie" jdbcType="INTEGER"/>
-            <result property="gscOe" column="gsc_oe" jdbcType="INTEGER"/>
-            <result property="gscMs" column="gsc_ms" jdbcType="INTEGER"/>
-            <result property="gscFc" column="gsc_fc" jdbcType="INTEGER"/>
-            <result property="diSum" column="di_sum" jdbcType="INTEGER"/>
-            <result property="vaf" column="vaf" jdbcType="FLOAT"/>
-            <result property="cf" column="cf" jdbcType="FLOAT"/>
-            <result property="complexity" column="complexity" jdbcType="INTEGER"/>
-            <result property="stage" column="stage" jdbcType="INTEGER"/>
-            <result property="method" column="method" jdbcType="INTEGER"/>
-            <result property="ufp" column="ufp" jdbcType="FLOAT"/>
-            <result property="dfp" column="dfp" jdbcType="FLOAT"/>
-            <result property="s" column="s" jdbcType="FLOAT"/>
-            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
-            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
-            <result property="remark" column="remark" jdbcType="VARCHAR"/>
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="userId" column="user_id" jdbcType="BIGINT"/>
+        <result property="ifDelete" column="if_delete" jdbcType="INTEGER"/>
+        <result property="deleteTime" column="delete_time" jdbcType="TIMESTAMP"/>
+        <result property="ilf" column="ilf" jdbcType="INTEGER"/>
+        <result property="eif" column="eif" jdbcType="INTEGER"/>
+        <result property="ei" column="ei" jdbcType="INTEGER"/>
+        <result property="eo" column="eo" jdbcType="INTEGER"/>
+        <result property="eq" column="eq" jdbcType="INTEGER"/>
+        <result property="gscDc" column="gsc_dc" jdbcType="INTEGER"/>
+        <result property="gscDdp" column="gsc_ddp" jdbcType="INTEGER"/>
+        <result property="gscP" column="gsc_p" jdbcType="INTEGER"/>
+        <result property="gscHuc" column="gsc_huc" jdbcType="INTEGER"/>
+        <result property="gscTr" column="gsc_tr" jdbcType="INTEGER"/>
+        <result property="gscOde" column="gsc_ode" jdbcType="INTEGER"/>
+        <result property="gscEue" column="gsc_eue" jdbcType="INTEGER"/>
+        <result property="gscOu" column="gsc_ou" jdbcType="INTEGER"/>
+        <result property="gscCp" column="gsc_cp" jdbcType="INTEGER"/>
+        <result property="gscR" column="gsc_r" jdbcType="INTEGER"/>
+        <result property="gscIe" column="gsc_ie" jdbcType="INTEGER"/>
+        <result property="gscOe" column="gsc_oe" jdbcType="INTEGER"/>
+        <result property="gscMs" column="gsc_ms" jdbcType="INTEGER"/>
+        <result property="gscFc" column="gsc_fc" jdbcType="INTEGER"/>
+        <result property="diSum" column="di_sum" jdbcType="INTEGER"/>
+        <result property="vaf" column="vaf" jdbcType="FLOAT"/>
+        <result property="cf" column="cf" jdbcType="FLOAT"/>
+        <result property="stage" column="stage" jdbcType="INTEGER"/>
+        <result property="method" column="method" jdbcType="INTEGER"/>
+        <result property="ufp" column="ufp" jdbcType="FLOAT"/>
+        <result property="dfp" column="dfp" jdbcType="FLOAT"/>
+        <result property="s" column="s" jdbcType="FLOAT"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <result property="remark" column="remark" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
@@ -53,8 +52,8 @@
         gsc_cp,gsc_r,gsc_ie,
         gsc_oe,gsc_ms,gsc_fc,
         di_sum,vaf,cf,
-        complexity,stage,method,
-        ufp,dfp,s,
-        create_time,update_time,remark
+        stage,method,ufp,
+        dfp,s,create_time,
+        update_time,remark
     </sql>
 </mapper>

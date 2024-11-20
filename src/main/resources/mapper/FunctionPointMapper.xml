@@ -15,6 +15,7 @@
         <result property="description" column="description" jdbcType="VARCHAR"/>
         <result property="category" column="category" jdbcType="VARCHAR"/>
         <result property="ufp" column="ufp" jdbcType="INTEGER"/>
+        <result property="complexity" column="complexity" jdbcType="INTEGER"/>
         <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
         <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
         <result property="remark" column="remark" jdbcType="VARCHAR"/>
@@ -24,7 +25,7 @@
         id,project_id,subsystem_id,
         if_delete,delete_time,module,
         name,description,category,
-        ufp,create_time,update_time,
-        remark
+        ufp,complexity,create_time,
+        update_time,remark
     </sql>
 </mapper>

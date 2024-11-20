@@ -41,6 +41,7 @@ CREATE TABLE `function_point` (
   `description` varchar(300) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '功能点描述',
   `category` varchar(5) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '分类',
   `ufp` int DEFAULT '0' COMMENT '对应ufp',
+  `complexity` int DEFAULT NULL COMMENT '复杂度：1=低，2=中，3=高',
   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `remark` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '备注',
@@ -92,7 +93,6 @@ CREATE TABLE `project` (
   `di_sum` int DEFAULT '0' COMMENT '综合系统特征',
   `vaf` float DEFAULT '0' COMMENT '调整系数值',
   `cf` float DEFAULT '0' COMMENT '规模变更调整因子',
-  `complexity` int DEFAULT '0' COMMENT '复杂度：1=低，2=中，3=高',
   `stage` int DEFAULT '0' COMMENT '状态：1=项目立项，2=项目招标，3=项目早期，4=项目中期，5=项目完成',
   `method` int DEFAULT '0' COMMENT '方法：1=dfp，2=s',
   `ufp` float DEFAULT '0' COMMENT '未调整功能点数',
@@ -190,4 +190,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-19 21:27:39
+-- Dump completed on 2024-11-20 10:12:27
