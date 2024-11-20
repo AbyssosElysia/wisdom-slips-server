@@ -2,7 +2,6 @@ package com.elysiaptr.wisdomslipsserver.strategy.impl.functionPointAnalyzeStrate
 
 import com.elysiaptr.wisdomslipsserver.entity.FunctionPoint;
 import com.elysiaptr.wisdomslipsserver.entity.Project;
-import com.elysiaptr.wisdomslipsserver.factory.UfpEntityFactory;
 import com.elysiaptr.wisdomslipsserver.strategy.FunctionPointAnalyzeStrategy;
 import com.elysiaptr.wisdomslipsserver.utils.FunctionPointAnalyzeAlgorithmUtil;
 
@@ -31,10 +30,13 @@ public abstract class AbstractFunctionPointAnalyzeStrategy implements FunctionPo
         project.setEo(ufpList[3]);
         project.setEq(ufpList[4]);
 
-        // TODO 修改算法
-        Map<Long, Integer> subsystemUfp = FunctionPointAnalyzeAlgorithmUtil.getSubsystemUfp(subsystemUfpList,
-                UfpEntityFactory.createUfpEntity(0));
-        project.setUfp(Double.valueOf(subsystemUfp.get(-1L)));
+        Map<Long, Integer> subsystemUfp = FunctionPointAnalyzeAlgorithmUtil.getSubsystemUfp(subsystemUfpList);
+        int sum = 0;
+        for (Integer i : subsystemUfp.values()) {
+            sum += i;
+        }
+        sum -= subsystemUfp.get(-1L);
+        project.setUfp((double) sum);
 
         return subsystemUfp;
     }

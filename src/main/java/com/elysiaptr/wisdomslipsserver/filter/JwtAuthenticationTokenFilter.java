@@ -52,6 +52,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
         String url = request.getRequestURI();
         log.debug("url: {}", url);
 
+        // TODO 开放所有api
         // 放行登录api和开放api
         if (url.startsWith(requestConfig.getOpenApiHeader()) || url.startsWith(requestConfig.getLoginApiHeader())) {
             filterChain.doFilter(request, response);

@@ -34,6 +34,16 @@ public class ApiResponse<T> {
     }
 
     /**
+     * 构造无参成功响应
+     *
+     * @param <T> 类型
+     * @return 响应体
+     */
+    public static <T> ApiResponse<T> success() {
+        return new ApiResponse<>(ResponseConstant.SUCCESS, "Request was successful", null);
+    }
+
+    /**
      * 构造失败响应
      *
      * @param message 错误数据

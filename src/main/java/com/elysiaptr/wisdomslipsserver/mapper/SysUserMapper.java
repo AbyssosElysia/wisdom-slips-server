@@ -2,6 +2,7 @@ package com.elysiaptr.wisdomslipsserver.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.elysiaptr.wisdomslipsserver.entity.SysUser;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * @author elysiaptr
@@ -9,6 +10,7 @@ import com.elysiaptr.wisdomslipsserver.entity.SysUser;
  * @createDate 2024-11-18 20:05:02
  * @Entity com.elysiaptr.wisdomslipsserver.entity.SysUser
  */
+@Mapper
 public interface SysUserMapper extends BaseMapper<SysUser> {
 
 }
