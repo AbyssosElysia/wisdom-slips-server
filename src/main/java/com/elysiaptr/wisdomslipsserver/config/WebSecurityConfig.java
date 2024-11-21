@@ -98,8 +98,9 @@ public class WebSecurityConfig {
                 .securityMatcher(requestConfig.getAuthenticationApi())
                 .authorizeHttpRequests(auth -> auth
                         // 除了登陆不拦截，其他均拦截
-                        // TODO 改为全部不拦截，方便swagger调试
-                        .requestMatchers(requestConfig.getLoginApi()).permitAll()
+                        // TODO 改为拦截
+//                        .requestMatchers(requestConfig.getLoginApi()).permitAll()
+                        .requestMatchers("/**").permitAll()
                         .anyRequest().authenticated());
 
         // 定义拦截器添加位置

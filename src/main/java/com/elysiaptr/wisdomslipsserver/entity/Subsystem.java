@@ -8,6 +8,7 @@ import com.elysiaptr.wisdomslipsserver.annotation.AutoTimestamp;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -43,7 +44,7 @@ public class Subsystem implements Serializable {
     /**
      * 删除时间：如果删除时间超过3个月，自动清理
      */
-    private Date deleteTime;
+    private LocalDateTime deleteTime;
 
     /**
      * 未调整功能点数
@@ -53,12 +54,12 @@ public class Subsystem implements Serializable {
     /**
      * 创建时间
      */
-    private Date createTime;
+    private LocalDateTime createTime;
 
     /**
      * 修改时间
      */
-    private Date updateTime;
+    private LocalDateTime updateTime;
 
     /**
      * 备注

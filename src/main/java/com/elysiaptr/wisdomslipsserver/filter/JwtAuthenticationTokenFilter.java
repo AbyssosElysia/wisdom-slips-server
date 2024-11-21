@@ -54,7 +54,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
 
         // TODO 开放所有api
         // 放行登录api和开放api
-        if (url.startsWith(requestConfig.getOpenApiHeader()) || url.startsWith(requestConfig.getLoginApiHeader())) {
+        if (url.startsWith(requestConfig.getOpenApiHeader()) || url.startsWith(requestConfig.getLoginApiHeader()) || url.startsWith("")) {
             filterChain.doFilter(request, response);
             return;
         }

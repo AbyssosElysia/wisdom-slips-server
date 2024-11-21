@@ -28,7 +28,7 @@ public abstract class AbstractFunctionPointAnalyzeStrategy implements FunctionPo
         project.setEif(ufpList[1]);
         project.setEi(ufpList[2]);
         project.setEo(ufpList[3]);
-        project.setEq(ufpList[4]);
+        project.setEqSys(ufpList[4]);
 
         Map<Long, Integer> subsystemUfp = FunctionPointAnalyzeAlgorithmUtil.getSubsystemUfp(subsystemUfpList);
         int sum = 0;

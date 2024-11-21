@@ -4,9 +4,11 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.elysiaptr.wisdomslipsserver.annotation.AutoTimestamp;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -16,6 +18,7 @@ import java.util.Date;
  */
 @TableName(value = "function_point")
 @Data
+@AutoTimestamp
 public class FunctionPoint implements Serializable {
     /**
      * 历史数据id
@@ -41,7 +44,7 @@ public class FunctionPoint implements Serializable {
     /**
      * 删除时间：如果删除时间超过3个月，自动清理
      */
-    private Date deleteTime;
+    private LocalDateTime deleteTime;
 
     /**
      * 所属模块名
@@ -76,12 +79,12 @@ public class FunctionPoint implements Serializable {
     /**
      * 创建时间
      */
-    private Date createTime;
+    private LocalDateTime createTime;
 
     /**
      * 更新时间
      */
-    private Date updateTime;
+    private LocalDateTime updateTime;
 
     /**
      * 备注

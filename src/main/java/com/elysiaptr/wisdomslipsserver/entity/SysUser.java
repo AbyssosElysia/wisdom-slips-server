@@ -8,6 +8,7 @@ import com.elysiaptr.wisdomslipsserver.annotation.AutoTimestamp;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -78,17 +79,17 @@ public class SysUser implements Serializable {
     /**
      * 最后一次登录时间
      */
-    private Date lastLoginTime;
+    private LocalDateTime lastLoginTime;
 
     /**
      * 创建时间
      */
-    private Date createTime;
+    private LocalDateTime createTime;
 
     /**
      * 最后一次修改时间
      */
-    private Date updateTime;
+    private LocalDateTime updateTime;
 
     /**
      * 备注

@@ -4,18 +4,20 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.Data;
-
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Date;
+
+import com.elysiaptr.wisdomslipsserver.annotation.AutoTimestamp;
+import lombok.Data;
 
 /**
  * 项目分析
- *
  * @TableName project
  */
-@TableName(value = "project")
+@TableName(value ="project")
 @Data
+@AutoTimestamp
 public class Project implements Serializable {
     /**
      * 查询历史id
@@ -41,7 +43,7 @@ public class Project implements Serializable {
     /**
      * 删除时间：如果删除时间超过3个月，自动清理
      */
-    private Date deleteTime;
+    private LocalDateTime deleteTime;
 
     /**
      * 内部逻辑文件
@@ -66,7 +68,7 @@ public class Project implements Serializable {
     /**
      * 外部查询
      */
-    private Integer eq;
+    private Integer eqSys;
 
     /**
      * 数据通信
@@ -181,12 +183,12 @@ public class Project implements Serializable {
     /**
      * 创建时间
      */
-    private Date createTime;
+    private LocalDateTime createTime;
 
     /**
      * 修改时间
      */
-    private Date updateTime;
+    private LocalDateTime updateTime;
 
     /**
      * 备注
@@ -209,40 +211,40 @@ public class Project implements Serializable {
         }
         Project other = (Project) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
-                && (this.getName() == null ? other.getName() == null : this.getName().equals(other.getName()))
-                && (this.getUserId() == null ? other.getUserId() == null : this.getUserId().equals(other.getUserId()))
-                && (this.getIfDelete() == null ? other.getIfDelete() == null : this.getIfDelete().equals(other.getIfDelete()))
-                && (this.getDeleteTime() == null ? other.getDeleteTime() == null : this.getDeleteTime().equals(other.getDeleteTime()))
-                && (this.getIlf() == null ? other.getIlf() == null : this.getIlf().equals(other.getIlf()))
-                && (this.getEif() == null ? other.getEif() == null : this.getEif().equals(other.getEif()))
-                && (this.getEi() == null ? other.getEi() == null : this.getEi().equals(other.getEi()))
-                && (this.getEo() == null ? other.getEo() == null : this.getEo().equals(other.getEo()))
-                && (this.getEq() == null ? other.getEq() == null : this.getEq().equals(other.getEq()))
-                && (this.getGscDc() == null ? other.getGscDc() == null : this.getGscDc().equals(other.getGscDc()))
-                && (this.getGscDdp() == null ? other.getGscDdp() == null : this.getGscDdp().equals(other.getGscDdp()))
-                && (this.getGscP() == null ? other.getGscP() == null : this.getGscP().equals(other.getGscP()))
-                && (this.getGscHuc() == null ? other.getGscHuc() == null : this.getGscHuc().equals(other.getGscHuc()))
-                && (this.getGscTr() == null ? other.getGscTr() == null : this.getGscTr().equals(other.getGscTr()))
-                && (this.getGscOde() == null ? other.getGscOde() == null : this.getGscOde().equals(other.getGscOde()))
-                && (this.getGscEue() == null ? other.getGscEue() == null : this.getGscEue().equals(other.getGscEue()))
-                && (this.getGscOu() == null ? other.getGscOu() == null : this.getGscOu().equals(other.getGscOu()))
-                && (this.getGscCp() == null ? other.getGscCp() == null : this.getGscCp().equals(other.getGscCp()))
-                && (this.getGscR() == null ? other.getGscR() == null : this.getGscR().equals(other.getGscR()))
-                && (this.getGscIe() == null ? other.getGscIe() == null : this.getGscIe().equals(other.getGscIe()))
-                && (this.getGscOe() == null ? other.getGscOe() == null : this.getGscOe().equals(other.getGscOe()))
-                && (this.getGscMs() == null ? other.getGscMs() == null : this.getGscMs().equals(other.getGscMs()))
-                && (this.getGscFc() == null ? other.getGscFc() == null : this.getGscFc().equals(other.getGscFc()))
-                && (this.getDiSum() == null ? other.getDiSum() == null : this.getDiSum().equals(other.getDiSum()))
-                && (this.getVaf() == null ? other.getVaf() == null : this.getVaf().equals(other.getVaf()))
-                && (this.getCf() == null ? other.getCf() == null : this.getCf().equals(other.getCf()))
-                && (this.getStage() == null ? other.getStage() == null : this.getStage().equals(other.getStage()))
-                && (this.getMethod() == null ? other.getMethod() == null : this.getMethod().equals(other.getMethod()))
-                && (this.getUfp() == null ? other.getUfp() == null : this.getUfp().equals(other.getUfp()))
-                && (this.getDfp() == null ? other.getDfp() == null : this.getDfp().equals(other.getDfp()))
-                && (this.getS() == null ? other.getS() == null : this.getS().equals(other.getS()))
-                && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()))
-                && (this.getUpdateTime() == null ? other.getUpdateTime() == null : this.getUpdateTime().equals(other.getUpdateTime()))
-                && (this.getRemark() == null ? other.getRemark() == null : this.getRemark().equals(other.getRemark()));
+            && (this.getName() == null ? other.getName() == null : this.getName().equals(other.getName()))
+            && (this.getUserId() == null ? other.getUserId() == null : this.getUserId().equals(other.getUserId()))
+            && (this.getIfDelete() == null ? other.getIfDelete() == null : this.getIfDelete().equals(other.getIfDelete()))
+            && (this.getDeleteTime() == null ? other.getDeleteTime() == null : this.getDeleteTime().equals(other.getDeleteTime()))
+            && (this.getIlf() == null ? other.getIlf() == null : this.getIlf().equals(other.getIlf()))
+            && (this.getEif() == null ? other.getEif() == null : this.getEif().equals(other.getEif()))
+            && (this.getEi() == null ? other.getEi() == null : this.getEi().equals(other.getEi()))
+            && (this.getEo() == null ? other.getEo() == null : this.getEo().equals(other.getEo()))
+            && (this.getEqSys() == null ? other.getEqSys() == null : this.getEqSys().equals(other.getEqSys()))
+            && (this.getGscDc() == null ? other.getGscDc() == null : this.getGscDc().equals(other.getGscDc()))
+            && (this.getGscDdp() == null ? other.getGscDdp() == null : this.getGscDdp().equals(other.getGscDdp()))
+            && (this.getGscP() == null ? other.getGscP() == null : this.getGscP().equals(other.getGscP()))
+            && (this.getGscHuc() == null ? other.getGscHuc() == null : this.getGscHuc().equals(other.getGscHuc()))
+            && (this.getGscTr() == null ? other.getGscTr() == null : this.getGscTr().equals(other.getGscTr()))
+            && (this.getGscOde() == null ? other.getGscOde() == null : this.getGscOde().equals(other.getGscOde()))
+            && (this.getGscEue() == null ? other.getGscEue() == null : this.getGscEue().equals(other.getGscEue()))
+            && (this.getGscOu() == null ? other.getGscOu() == null : this.getGscOu().equals(other.getGscOu()))
+            && (this.getGscCp() == null ? other.getGscCp() == null : this.getGscCp().equals(other.getGscCp()))
+            && (this.getGscR() == null ? other.getGscR() == null : this.getGscR().equals(other.getGscR()))
+            && (this.getGscIe() == null ? other.getGscIe() == null : this.getGscIe().equals(other.getGscIe()))
+            && (this.getGscOe() == null ? other.getGscOe() == null : this.getGscOe().equals(other.getGscOe()))
+            && (this.getGscMs() == null ? other.getGscMs() == null : this.getGscMs().equals(other.getGscMs()))
+            && (this.getGscFc() == null ? other.getGscFc() == null : this.getGscFc().equals(other.getGscFc()))
+            && (this.getDiSum() == null ? other.getDiSum() == null : this.getDiSum().equals(other.getDiSum()))
+            && (this.getVaf() == null ? other.getVaf() == null : this.getVaf().equals(other.getVaf()))
+            && (this.getCf() == null ? other.getCf() == null : this.getCf().equals(other.getCf()))
+            && (this.getStage() == null ? other.getStage() == null : this.getStage().equals(other.getStage()))
+            && (this.getMethod() == null ? other.getMethod() == null : this.getMethod().equals(other.getMethod()))
+            && (this.getUfp() == null ? other.getUfp() == null : this.getUfp().equals(other.getUfp()))
+            && (this.getDfp() == null ? other.getDfp() == null : this.getDfp().equals(other.getDfp()))
+            && (this.getS() == null ? other.getS() == null : this.getS().equals(other.getS()))
+            && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()))
+            && (this.getUpdateTime() == null ? other.getUpdateTime() == null : this.getUpdateTime().equals(other.getUpdateTime()))
+            && (this.getRemark() == null ? other.getRemark() == null : this.getRemark().equals(other.getRemark()));
     }
 
     @Override
@@ -258,7 +260,7 @@ public class Project implements Serializable {
         result = prime * result + ((getEif() == null) ? 0 : getEif().hashCode());
         result = prime * result + ((getEi() == null) ? 0 : getEi().hashCode());
         result = prime * result + ((getEo() == null) ? 0 : getEo().hashCode());
-        result = prime * result + ((getEq() == null) ? 0 : getEq().hashCode());
+        result = prime * result + ((getEqSys() == null) ? 0 : getEqSys().hashCode());
         result = prime * result + ((getGscDc() == null) ? 0 : getGscDc().hashCode());
         result = prime * result + ((getGscDdp() == null) ? 0 : getGscDdp().hashCode());
         result = prime * result + ((getGscP() == null) ? 0 : getGscP().hashCode());
@@ -302,7 +304,7 @@ public class Project implements Serializable {
         sb.append(", eif=").append(eif);
         sb.append(", ei=").append(ei);
         sb.append(", eo=").append(eo);
-        sb.append(", eq=").append(eq);
+        sb.append(", eqSys=").append(eqSys);
         sb.append(", gscDc=").append(gscDc);
         sb.append(", gscDdp=").append(gscDdp);
         sb.append(", gscP=").append(gscP);

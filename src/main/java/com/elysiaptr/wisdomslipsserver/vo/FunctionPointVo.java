@@ -1,9 +1,9 @@
-package com.elysiaptr.wisdomslipsserver.vo.entity;
+package com.elysiaptr.wisdomslipsserver.vo;
 
 import lombok.Data;
 
 @Data
-public class FunctionPointVO {
+public class FunctionPointVo {
     /**
      * 子系统id
      */

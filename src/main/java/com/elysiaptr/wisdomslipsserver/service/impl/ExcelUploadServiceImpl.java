@@ -106,6 +106,8 @@ public class ExcelUploadServiceImpl implements ExcelUploadService {
             int complexity = ComplexityFactory.getComplexity(cell7.getStringCellValue());
             newFunctionPoint.setComplexity(complexity);
 
+            newFunctionPoint.setProjectId(projectId);
+
             functionPointMapper.insert(newFunctionPoint);
         }
 
