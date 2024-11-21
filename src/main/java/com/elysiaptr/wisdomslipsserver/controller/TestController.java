@@ -10,12 +10,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 // TODO 删除测试用Controller
 @RestController
-@RequestMapping("/api/test")
 public class TestController {
 
-    @GetMapping("/auth")
+    @GetMapping("/api/test/auth")
     public ApiResponse<Long> test(@RequestParam String input) {
         LoginUser principal = (LoginUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         return ApiResponse.success(principal.getUser().getId());
+    }
+
+    @GetMapping("/favicon.ico")
+    public ApiResponse<Long> icon() {
+        return ApiResponse.success();
     }
 }

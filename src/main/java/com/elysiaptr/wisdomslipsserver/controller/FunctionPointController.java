@@ -116,6 +116,7 @@ public class FunctionPointController {
         FunctionPointVo functionPointVo = new FunctionPointVo();
         BeanUtils.copyProperties(functionPoint, functionPointVo);
         functionPointVo.setSubsystemName(subsystemService.getById(functionPoint.getSubsystemId()).getName());
+        functionPointVo.setSubsystemId(functionPoint.getSubsystemId());
         return functionPointVo;
     }
 }

@@ -5,6 +5,11 @@ import lombok.Data;
 @Data
 public class FunctionPointVo {
     /**
+     * 功能点id
+     */
+    private Integer id;
+
+    /**
      * 子系统id
      */
     private Integer subsystemId;
